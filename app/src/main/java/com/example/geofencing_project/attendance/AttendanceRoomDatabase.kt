@@ -4,8 +4,11 @@ import android.content.Context
 import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
+import androidx.room.TypeConverters
+import com.example.geofencing_project.DateConverter // Import your DateConverter
 
 @Database(entities = [Attendance::class], version = 1, exportSchema = false)
+@TypeConverters(DateConverter::class) // Add this annotation
 abstract class AttendanceRoomDatabase : RoomDatabase() {
 
     abstract fun attendanceDao(): AttendanceDao
