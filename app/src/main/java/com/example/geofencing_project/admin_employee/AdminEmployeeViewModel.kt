@@ -2,7 +2,6 @@ package com.example.geofencing_project.admin_employee
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-
 import kotlinx.coroutines.launch
 
 class AdminEmployeeViewModel(private val repository: AdminEmployeeRepository) : ViewModel() {
@@ -17,5 +16,9 @@ class AdminEmployeeViewModel(private val repository: AdminEmployeeRepository) : 
 
     fun getAdminByEmployee(employeeId: Int) = viewModelScope.launch {
         repository.getAdminByEmployee(employeeId)
+    }
+
+    fun getAdminEmployeeByLocation(locationId: Int) = viewModelScope.launch {
+        repository.getAdminEmployeeByLocation(locationId)
     }
 }

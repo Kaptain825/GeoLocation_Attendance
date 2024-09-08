@@ -1,4 +1,5 @@
 package com.example.geofencing_project.database.locations
+
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
@@ -9,5 +10,5 @@ data class Location(
     val location_name: String,
     val latitude: Double,
     val longitude: Double,
-    val radius:Int
+    val radius: Int
 )

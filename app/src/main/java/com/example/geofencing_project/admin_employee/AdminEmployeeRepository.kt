@@ -1,7 +1,6 @@
 package com.example.geofencing_project.admin_employee
 
-import com.example.geofencing_project.admin_employee.AdminEmployee
-import com.example.geofencing_project.admin_employee.AdminEmployeeDao
+import kotlinx.coroutines.flow.Flow
 
 class AdminEmployeeRepository(private val adminEmployeeDao: AdminEmployeeDao) {
 
@@ -15,5 +14,9 @@ class AdminEmployeeRepository(private val adminEmployeeDao: AdminEmployeeDao) {
 
     suspend fun getAdminByEmployee(employeeId: Int): AdminEmployee? {
         return adminEmployeeDao.getAdminByEmployee(employeeId)
+    }
+
+    fun getAdminEmployeeByLocation(locationId: Int): Flow<List<AdminEmployee>> {
+        return adminEmployeeDao.getAdminEmployeeByLocation(locationId)
     }
 }
