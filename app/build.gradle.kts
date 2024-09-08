@@ -36,8 +36,9 @@ android {
     }
 }
 
-dependencies {
 
+
+dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -50,6 +51,6 @@ dependencies {
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     //live-data
-    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.3")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.3")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
 }
