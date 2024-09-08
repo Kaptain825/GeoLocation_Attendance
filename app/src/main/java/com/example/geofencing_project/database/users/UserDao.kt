@@ -1,5 +1,6 @@
 package com.example.geofencing_project.database.users
 
+import androidx.lifecycle.LiveData
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
@@ -20,7 +21,8 @@ interface UserDao {
     suspend fun getAllAdmins(): List<User>
 
     @Query("SELECT * FROM users WHERE userid = :userId AND role = :role")
-    suspend fun getUserByIdAndRole(userId: Int, role: String): User?
+    fun getUserByIdAndRole(userId: Int, role: String): LiveData<User>
+
 
     @Query("SELECT * FROM users WHERE role = 'employee'")
     suspend fun getAllEmployees(): List<User>

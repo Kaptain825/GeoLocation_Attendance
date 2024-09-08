@@ -1,5 +1,7 @@
 package com.example.geofencing_project.database.users
 
+import androidx.lifecycle.LiveData
+
 class UserRepository(private val userDao: UserDao) {
 
     suspend fun insert(user: User) {
@@ -21,4 +23,9 @@ class UserRepository(private val userDao: UserDao) {
     suspend fun getAllEmployees(): List<User> {
         return userDao.getAllEmployees()
     }
+
+    fun getUserByIdAndRole(userId: Int, role: String): LiveData<User> {
+        return userDao.getUserByIdAndRole(userId, role)
+    }
+
 }

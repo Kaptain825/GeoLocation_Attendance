@@ -1,5 +1,6 @@
 package com.example.geofencing_project.database.users
 
+import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
@@ -10,9 +11,10 @@ class UserViewModel(private val repository: UserRepository) : ViewModel() {
         repository.insert(user)
     }
 
-    fun getUserById(userId: Int) = viewModelScope.launch {
-        repository.getUserById(userId)
+    fun getUserByIdAndRole(userId: Int, role: String): LiveData<User> {
+        return repository.getUserByIdAndRole(userId, role)
     }
+
 
     suspend fun getUserByUsername(username: String): User? {
         return repository.getUserByUsername(username)
