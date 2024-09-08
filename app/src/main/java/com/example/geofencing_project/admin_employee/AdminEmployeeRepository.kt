@@ -16,6 +16,10 @@ class AdminEmployeeRepository(private val adminEmployeeDao: AdminEmployeeDao) {
         return adminEmployeeDao.getAdminByEmployee(employeeId)
     }
 
+    suspend fun updateLocationId(employeeId: Int, locationId: Int?) {
+        adminEmployeeDao.updateLocationId(employeeId, locationId)
+    }
+
     fun getAdminEmployeeByLocation(locationId: Int): Flow<List<AdminEmployee>> {
         return adminEmployeeDao.getAdminEmployeeByLocation(locationId)
     }

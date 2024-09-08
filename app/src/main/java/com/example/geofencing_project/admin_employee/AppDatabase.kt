@@ -5,6 +5,7 @@ import androidx.room.Database
 import androidx.room.Room
 import androidx.room.RoomDatabase
 import com.example.geofencing_project.database.locations.Location
+import com.example.geofencing_project.database.locations.LocationDao
 import com.example.geofencing_project.database.users.User
 import com.example.geofencing_project.database.users.UserDao
 
@@ -13,6 +14,7 @@ abstract class AppDatabase : RoomDatabase() {
 
     abstract fun adminEmployeeDao(): AdminEmployeeDao
     abstract fun userDao(): UserDao
+    abstract fun locationDao(): LocationDao  // Ensure this line is present
 
     companion object {
         @Volatile

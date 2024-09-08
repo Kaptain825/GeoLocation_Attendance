@@ -8,11 +8,11 @@ import kotlinx.coroutines.launch
 class LocationViewModel(private val locationRepository: LocationRepository) : ViewModel() {
 
     // Expose all locations as LiveData
-    val allLocations: LiveData<List<Location>> = locationRepository.allLocations
+    val allLocations: LiveData<List<Location>> = locationRepository.getAllLocations()
 
-    // Method to insert a new location
-    fun insertLocation(location: Location) = viewModelScope.launch {
-        locationRepository.insertLocation(location)
+    // Method to insert a new location and return its ID
+    suspend fun insertLocation(location: Location): Long {
+        return locationRepository.insertLocation(location)
     }
 
     // Method to get a location by its ID

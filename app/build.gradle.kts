@@ -46,6 +46,7 @@ dependencies {
     implementation(libs.androidx.constraintlayout)
     implementation("androidx.room:room-common:2.6.0")
     implementation("androidx.room:room-ktx:2.6.0")
+    implementation(libs.play.services.maps)
     kapt("androidx.room:room-compiler:2.6.0")
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
@@ -54,5 +55,5 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.6.2")
     implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.6.2")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-
+    implementation("com.google.android.gms:play-services-location:21.0.1")
 }
