@@ -7,5 +7,6 @@ import androidx.room.PrimaryKey
 data class AdminEmployee(
     @PrimaryKey(autoGenerate = true) val id: Int = 0,
     val admin_id: Int,
-    val employee_id: Int
+    val employee_id: Int,
+    val location_id: Int
 )
